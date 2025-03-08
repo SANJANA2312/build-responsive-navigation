@@ -1,0 +1,117 @@
+{
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, sans-serif;
+
+}
+header{
+    background-color: rgb(114, 10, 10);
+    color: rgb(186, 215, 43);
+    position:relative;
+    display:flex;
+    /*things under this tag jump aside of each other, by default they go row, you can apply flex column too*/
+    align-items: center;
+    justify-content: space-between;
+    /*i want space that the website does not touch on either sides to the screen add padding, there are many ways good and bad*/
+    /*padding: 0 1rem 0 1rem; TRouble */
+     padding: 0 1rem; /*TB LR*/
+
+
+}
+main{
+    background-color: rgb(183, 118, 118);
+    color:azure;}
+    
+
+button {
+    /*to remove background color of button, so that it channgea to whatever is the background color automatically*/
+    background: none;
+    color:antiquewhite;
+    border: none;
+    font-size: 151%;
+    /*to change the cursor of hamburger menu when you use laptop to a hand whenever you hover over it*/
+    /*dont use unicorn cursor like 90's*/
+    cursor:pointer;
+
+    display: none;
+}
+
+nav {
+    /*initially they are stacked one below the other, so we want to change it so */
+    display:flex; /*not much differnece with just this, but it will give you some space*/
+
+}
+nav ul li {
+    list-style-type:none;
+    display: inline;
+    /*margin used to give space between elements*/
+    margin: 1.5rem; /*but this also added space at the end of the list, but we dont want it so using this newe thing last of type in the code below*/
+}
+
+nav ul li:last-of-type{
+    margin-right: 0;
+}
+/*there is the thing called last of child as well , what is the difference*/
+
+/*now lets get rid of silly blue link thing*/
+
+nav ul li a{
+    color: rgb(186, 215, 43);
+    /*the links are underlined by default, so you can change it */
+    text-decoration: none;
+    /*dont use u tag in html for underline it is a old thing, if you want do with text decoration*/
+
+}
+
+nav ul li a:hover{
+    color: rgb(252, 175, 175);
+    text-decoration: underline;
+}
+
+/*have decided your own breakpoint, just have a justification in design why you did it*/
+
+@media screen and (max-width: 850px) {
+    button {
+        display:block;
+    }
+    button:focus{
+        color: rgb(186, 215, 43);
+        border:1px solid yellow;
+    }
+    nav{
+       display:none;
+
+       position:absolute;
+       top: 100%;
+       left: 0;
+       z-index: 100;
+       background-color: black;
+       /*border: 1px solid green;*/
+       width:100%;
+    }
+
+    nav.active{
+        display:block;
+    }
+
+    nav ul{ 
+        width: 100%;
+        margin:0;
+        padding:0;
+
+    }
+
+    nav ul li {
+        display:block;
+        text-align: center; /*dont use on body tag*/
+        border: 1px solid white;
+        margin: 0; /*if this is just margin right as zero it would not work*/
+    }
+
+    nav ul li a{
+       /* border: 2px solid rgb(186, 215, 43);*/
+        display:block;
+        padding: 1.5rem;
+    }
+}
